@@ -32,8 +32,8 @@ $JOB
 
 
 
-######Intersects#####
-
+######Intersects and preload bedtools#####
+ml mugqic/bedtools/2.26.0
 cat junctions.bed | sort -n -r -k 5 -o junctions.sorted.bed
 sort -k1,1 -k2,2n junctions.sorted.bed > junctions.2.sorted.bed
 bedtools intersect -a  accepted_hits.bam -b junctions.2.sorted.bed -F 0.5 -sorted | samtools view - > abam.F.0.5.intersects
